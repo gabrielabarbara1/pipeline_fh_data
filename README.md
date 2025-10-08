@@ -2,11 +2,11 @@
 
 Este projeto implementa um pipeline de dados simplificado (Bronze, Silver, Gold) que busca dados de repositórios populares do GitHub, os processa, normaliza e gera métricas analíticas.
 
-## 🎯 Objetivo do Projeto
+## Objetivo do Projeto
 
 O objetivo é demonstrar a construção de um pipeline de dados robusto e modular, seguindo as melhores práticas de engenharia de dados, como a separação em camadas (ingestão, normalização e analytics), tratamento de erros e capacidade de recuperação.
 
-## ✨ Principais Funcionalidades
+## Principais Funcionalidades
 
 * **Arquitetura em Camadas:** Organização clara em Bronze (dados brutos), Silver (dados limpos) e Gold (métricas de negócio).
 * **Ingestão Resiliente:** Utiliza um sistema de checkpoint para retomar a busca de dados de onde parou, evitando trabalho duplicado.
@@ -14,11 +14,11 @@ O objetivo é demonstrar a construção de um pipeline de dados robusto e modula
 * **Eficiência de Armazenamento:** Salva os dados processados em formato Parquet, otimizado para performance e análise.
 * **Modularidade:** O código é estruturado em funções claras e distintas para cada etapa do pipeline.
 
-## ⚙️ Como Funciona: Detalhes Técnicos
+## Como Funciona: Detalhes Técnicos
 
 O pipeline é orquestrado pelo script `main.py` e executa três estágios principais:
 
-### 🥉 Camada Bronze (Ingestão de Dados Brutos)
+### Camada Bronze (Ingestão de Dados Brutos)
 
 Nesta fase, o pipeline busca dados da API de busca de repositórios do GitHub.
 
@@ -28,7 +28,7 @@ Nesta fase, o pipeline busca dados da API de busca de repositórios do GitHub.
 * **Tratamento de Erros:** O pipeline tentará novamente (com tempo de espera crescente) em caso de erros de servidor (`5xx`) ou de limite de taxa (`403`, `429`).
 * **Saída:** Os dados brutos de cada página são salvos como arquivos JSON separados em `data/bronze/repositories/YYYY/MM/DD/page_{numero_da_pagina}.json`.
 
-### 🥈 Camada Silver (Limpeza e Normalização)
+### Camada Silver (Limpeza e Normalização)
 
 A camada Silver transforma os dados brutos em um formato tabular, limpo e pronto para análise.
 
@@ -39,7 +39,7 @@ A camada Silver transforma os dados brutos em um formato tabular, limpo e pronto
     * Extrai a chave da licença (`license.key`) para uma nova coluna `license_key`.
 * **Saída:** A tabela limpa e normalizada é salva como um único arquivo Parquet em `data/silver/repositories/repositories.parquet`.
 
-### 🥇 Camada Gold (Métricas e Agregação)
+### Camada Gold (Métricas e Agregação)
 
 A camada final agrega os dados limpos para criar métricas de negócio de alto nível.
 
@@ -60,7 +60,7 @@ Neste projeto, os dados das camadas Silver e Gold são salvos em formato **Parqu
 
 Em resumo, o Parquet é o padrão da indústria para dados analíticos, pois oferece um desempenho superior e maior eficiência de armazenamento, tornando o pipeline mais robusto e escalável.
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 mini-pipeline-github/
 ├── data/                 # Diretório raiz para os dados (não versionado)
@@ -72,7 +72,7 @@ mini-pipeline-github/
 ├── requirements.txt      # Dependências do projeto Python
 └── README.md             # Este arquivo
 
-## 🚀 Como Executar
+## Como Executar
 
 ### Pré-requisitos
 
