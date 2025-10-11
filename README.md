@@ -82,8 +82,8 @@ mini-pipeline-github/
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/gabrielabarbara1/pipeline_fh_data.git](https://github.com/gabrielabarbara1/pipeline_fh_data.git)
-    cd pipeline_fh_data
+    git clone [https://github.com/gabrielabarbara1/pipeline_paginado_parquet.git](https://github.com/gabrielabarbara1/pipeline_paginado_parquet.git)
+    cd pipeline_paginado_parquet
     ```
 
 2.  **Crie e ative um ambiente virtual:**
